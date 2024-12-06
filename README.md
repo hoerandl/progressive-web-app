@@ -2,7 +2,7 @@
 
 Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenantes "progressive Web App" kurz PWA installieren kann.
 
-## Infomations
+## Infos
 [web.dev](https://web.dev/explore/progressive-web-apps)
 
 ## Credits
