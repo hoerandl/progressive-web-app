@@ -1,0 +1,36 @@
+{
+  "name": "Progressive Web App",
+  "short_name": "Web App",
+  "description": "Das ist eine kleine HTML Seite, die als sogenanntes \"progressive Web App\" fungiert.",
+  "start_url": "/github/progressive-web-app/",
+  "id": "/github/progressive-web-app/",
+  "display": "fullscreen",
+  "theme_color": "#242424",
+  "background_color": "#242424",
+  "icons": [
+    {
+      "src": "img/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
