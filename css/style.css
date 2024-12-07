@@ -28,3 +28,22 @@ h1 {
   margin: 0 auto;
   text-align: left;
 }
+.version {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+#buttonInstall {
+  display: none;
+}
+button.install {
+  background-color: #52ff00;
+  color: #000;
+  padding: 10px 20px;
+  margin: 20px auto;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
