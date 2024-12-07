@@ -1,5 +1,5 @@
 // Informationen anzeigen
-var info = "";
+var info = "Start...<br>";
 document.querySelector("#info").innerHTML = info;
 
 // Install-Button anzeigen
@@ -36,8 +36,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault(); // verhindert die Anzeige der Mini-Infoleiste auf mobilen Geräten
   deferredPrompt = e;
   showInstallPromotion();
-  document.querySelector("#info").innerHTML +=
-    '"beforeinstallprompt" event was fired<br>';
+  document.querySelector("#info").innerHTML += "PWA ready for installation<br>";
 });
 
 // der Button zum Installieren wurde gedrückt

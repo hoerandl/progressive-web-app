@@ -1,7 +1,6 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 body {
   background-color: #222;
   color: #fff;
@@ -17,6 +16,9 @@ h1 {
 .green {
   color: #52ff00;
 }
+.nowrap {
+  white-space: nowrap;
+}
 .infopanel {
   font-family: "Courier New", Courier, monospace;
   background-color: black;
@@ -29,12 +31,8 @@ h1 {
   text-align: left;
 }
 .version {
-  font-family: "Courier New", Courier, monospace;
   font-size: 0.8rem;
   margin-top: 10px;
-}
-#buttonInstall {
-  display: none;
 }
 button.install {
   background-color: #52ff00;
@@ -46,4 +44,9 @@ button.install {
   font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
+}
+@media all and (display-mode: fullscreen) {
+  body {
+    background-color: #002200;
+  }
 }
