@@ -1,6 +1,17 @@
-# my Progressive Web App
+# Progressive Web App
 
-Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenantes "progressive Web App" kurz PWA installieren kann.
+Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "progressive Web App" kurz PWA installieren kann.
+Derzeit werden nur folgende Browser (in der jeweils aktuellen Version) unterstützt:
+
+- Chrome
+- Edge
+- Opera
+- Chrome für Android
+- Samsung Internet
+- Opera Mobile
+- Android Browser
+
+siehe: [Can I use](https://caniuse.com/?search=beforeinstallprompt)
 
 [DEMO](https://www.hoerandl.com/github/progressive-web-app/index.html)
 
