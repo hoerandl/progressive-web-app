@@ -4,7 +4,7 @@ Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "progre
 
 [DEMO](https://www.hoerandl.com/github/progressive-web-app/index.html)
 
-# Support
+## Support
 
 Derzeit werden nur folgende Browser (in der jeweils aktuellen Version) unterstützt:
 
