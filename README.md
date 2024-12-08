@@ -1,12 +1,14 @@
 # Progressive Web App
 
-Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "progressive Web App" kurz PWA installieren kann.
+Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "**progressive Web App**" kurz **PWA** installieren kann.
 
-[DEMO](https://www.hoerandl.com/github/progressive-web-app/index.html)
+_Testweise wurden auch schon die ersten Versuche von Push-Benachrichtigungen eingebaut._
+
+[DEMOSEITE](https://www.hoerandl.com/github/progressive-web-app/index.html)
 
 ## Support
 
-Derzeit werden nur folgende Browser (in der jeweils aktuellen Version) unterstützt:
+Derzeit werden PWAs nur von folgenden Browser (in der jeweils aktuellen Version) unterstützt:
 
 - Chrome
 - Edge
@@ -20,8 +22,10 @@ siehe: [Can I use](https://caniuse.com/?search=beforeinstallprompt)
 
 ## Infos
 
-[web.dev](https://web.dev/explore/progressive-web-apps)
+- [Progressive Web-Apps](https://web.dev/explore/progressive-web-apps)
+- [Push Notifications](https://www.magicbell.com/blog/using-push-notifications-in-pwas)
+- [Notifications](https://developer.mozilla.org/de/docs/Web/API/Notification)
 
 ## Credits
 
-[Icon Alien](https://www.svgrepo.com/svg/535115/alien)
+- [Icon Alien](https://www.svgrepo.com/svg/535115/alien)
