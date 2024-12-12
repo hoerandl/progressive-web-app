@@ -2,9 +2,12 @@
 
 Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "**progressive Web App**" kurz **PWA** installieren kann.
 
-_Testweise wurden auch schon die ersten Versuche von Push-Benachrichtigungen eingebaut._
-
 [DEMOSEITE](https://www.hoerandl.com/github/progressive-web-app/index.html)
+
+## Testfunktionen
+
+- Benachrichtigungem testen
+- Cache Funktionen eingebaut - _noch in Arbeit_
 
 ## Support
 

@@ -218,18 +218,31 @@
         PWA Installieren
       </button>
       <hr />
-      <h2>Test-Area:</h2>
+      <h2>Benachrichtigungen:</h2>
       <div id="testarea" class="testarea">
-        <p>
-          Es wurden 3 Benachrichtigungen gespeichert, die per Zufallsprinzip
-          angezeigt werden.
-        </p>
-        <button id="buttonNotifications" class="notifications">
+        <p>Status: <span id="noificationStatus"></span></p>
+        <button
+          id="buttonNotificationPermission"
+          class="btn"
+          style="display: none"
+        >
+          Benachrichtigung zulassen
+        </button>
+        <button id="buttonNotificationSubmit" class="btn" style="display: none">
           Benachrichtigung erhalten
         </button>
       </div>
-      <div class="version">v1.0.1</div>
+      <hr />
+      <h2>Cache:</h2>
+      <div class="testarea">
+        <p>Coming soon ...</p>
+        <button id="clearCache" class="btn" style="display: none">
+          Cache leeren
+        </button>
+      </div>
+      <div id="version" class="version"></div>
     </div>
+    <script src="version.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

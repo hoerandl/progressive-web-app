@@ -1,3 +1,7 @@
+// Versionsnummer anzeigen
+console.log(version);
+document.querySelector("#version").innerHTML = version;
+
 // Informationen anzeigen
 var info = "Start...<br>";
 document.querySelector("#info").innerHTML = info;
@@ -75,47 +79,50 @@ window.addEventListener("DOMContentLoaded", () => {
     "Display Mode: " + getPWADisplayMode() + "<br>";
 });
 
-// Einwilligung der Erlaubnis von Notifications einholen
-const button = document.getElementById("buttonNotifications");
-button.addEventListener("click", () => {
-  Notification.requestPermission().then((result) => {
-    console.log(result);
-    if (result === "granted") {
-      randomNotification();
-    }
+// Benachrichtigungen
+var notify = Notification.permission;
+let notificationStatus = "";
+switch (notify) {
+  case "denied":
+    document.getElementById("noificationStatus").innerHTML =
+      '<span class="danger">Benachrichtigungen sind NICTHT erlaubt</span>';
+    console.error("Benachrichtigungen sind nicht erlaubt");
+    break;
+  case "granted":
+    document.getElementById("noificationStatus").innerHTML =
+      '<span class="success">Benachrichtigungen sind erlaubt</span>';
+    document.getElementById("buttonNotificationSubmit").style.display = "block";
+    console.log("Benachrichtigungen sind erlaubt");
+    break;
+  case "default":
+    document.getElementById("noificationStatus").innerHTML =
+      '<span class="warning">unbekannt</span>';
+    document.getElementById("buttonNotificationPermission").style.display =
+      "block";
+    console.warn("Benachrichtigungsstatus unbekannt");
+}
+
+// Erlaubnis von Benachrichtigungen einholen
+const buttonPermission = document.getElementById(
+  "buttonNotificationPermission"
+);
+buttonPermission.addEventListener("click", () => {
+  Notification.requestPermission().then(() => {
+    window.location.reload();
   });
 });
 
-// Beispielsarray erzeugen
-let games = new Array();
-games[0] = new Object();
-games[0]["name"] = "Logo Quiz";
-games[0]["author"] = "Martin";
-games[0]["slug"] = "logo";
-games[1] = new Object();
-games[1]["name"] = "Cartoon Quiz";
-games[1]["author"] = "Günther";
-games[1]["slug"] = "cartoon";
-games[2] = new Object();
-games[2]["name"] = "4 Bilder 1 Wort";
-games[2]["author"] = "Thomas";
-games[2]["slug"] = "4pics1word";
-
-// zufällige Benachrichtigungen
-
-function randomNotification() {
-  const randomItem = Math.floor(Math.random() * games.length);
-  const notifTitle = games[randomItem].name;
-  const notifBody = `Created by ${games[randomItem].author}.`;
-  const notifImg = `img/${games[randomItem].slug}.jpg`;
-  const options = {
-    body: notifBody,
-    icon: notifImg,
+// Nachricht erzeugen
+function simpleNotification() {
+  let options = {
+    body: "Das ist der Inhalt der Testnachricht.",
+    icon: "./img/logo.png",
   };
-  new Notification(notifTitle, options);
-  // setTimeout(randomNotification, 30000);
+  new Notification("Testnachricht", options);
 }
 
-// Notification.permission = "default"; // funzt net, nur lesbar
-var notify = Notification.permission;
-console.log(notify);
+// Nachricht senden bzw. empfangen
+const buttonSubmit = document.getElementById("buttonNotificationSubmit");
+buttonSubmit.addEventListener("click", () => {
+  simpleNotification();
+});
