@@ -6,7 +6,7 @@ Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "**prog
 
 ## Testfunktionen
 
-- Benachrichtigungem testen
+- Benachrichtigungen testen
 - Cache Funktionen eingebaut - _noch in Arbeit_
 
 ## Support
@@ -22,6 +22,21 @@ Derzeit werden PWAs nur von folgenden Browser (in der jeweils aktuellen Version)
 - Android Browser
 
 siehe: [Can I use](https://caniuse.com/?search=beforeinstallprompt)
+
+## meine Tests
+
+alle Funktionen funktionierten:
+
+- Chrome (Windows 10)
+- Edge (Windows 10)
+- Chrome (Linux Mint)
+- Chrome (Android)
+- Safari (Android)
+
+Benachrichtigungen und Cache, NICHT aber die Installation als PWA:
+
+- Firefox (Windows 10)
+- FIrefox (Linux Mint)
 
 ## Infos
 

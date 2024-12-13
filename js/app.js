@@ -113,6 +113,7 @@ buttonPermission.addEventListener("click", () => {
 });
 
 // Nachricht erzeugen
+/*
 function simpleNotification() {
   let options = {
     body: "Das ist der Inhalt der Testnachricht.",
@@ -120,9 +121,69 @@ function simpleNotification() {
   };
   new Notification("Testnachricht", options);
 }
+*/
+function simpleNotification() {
+  if (notify == "granted") {
+    navigator.serviceWorker.ready.then(function (registration) {
+      let options = {
+        body: "Das ist der Inhalt der Testnachricht.",
+        icon: "./img/logo.png",
+      };
+      registration.showNotification("Testnachricht", options);
+    });
+  }
+}
 
 // Nachricht senden bzw. empfangen
 const buttonSubmit = document.getElementById("buttonNotificationSubmit");
 buttonSubmit.addEventListener("click", () => {
   simpleNotification();
 });
+
+// kompletten Cache leeren
+async function cacheDeleteAll() {
+  const keys = await caches.keys();
+  for (const key of keys) {
+    caches.delete(key);
+    console.log(key);
+  }
+}
+
+// Nachricht senden bzw. empfangen
+const buttonClearCache = document.getElementById("clearCache");
+buttonClearCache.addEventListener("click", () => {
+  cacheDeleteAll();
+  document.querySelector("#cacheFiles").innerHTML = "";
+  cacheFiles();
+});
+
+// alle Dateien im Cache holen
+const cacheFileArray = [];
+async function cacheFiles() {
+  const keys = await caches.keys();
+  for (const key of keys) {
+    console.log(key);
+
+    caches.open(key).then((cache) => {
+      cache
+        .matchAll()
+        .then((response) => {
+          return response;
+        })
+        .then((files) => {
+          console.log(files);
+          document.querySelector("#cacheFiles").innerHTML +=
+            "<h3>" + key + "</h3><ul>";
+          for (const file of files) {
+            console.log(file.url);
+            document.querySelector("#cacheFiles").innerHTML +=
+              '<li><a href="' + file.url + '">' + file.url + "</a></li>";
+          }
+          document.querySelector("#cacheFiles").innerHTML += "</ul>";
+        });
+    });
+  }
+}
+
+cacheFiles();
+console.log(cacheFileArray);

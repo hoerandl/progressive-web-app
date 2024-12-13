@@ -2,7 +2,7 @@ const assets = ["./index.html", "./css/style.css", "./js/app.js"];
 
 const cacheTypes = ["main", "font", "image"];
 
-// Versionsnummer holen (Variante A)
+// Versionsnummer holen
 importScripts("./version.js");
 console.log("Version: " + version);
 const cacheVersion = "_" + version;

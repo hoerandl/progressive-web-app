@@ -93,3 +93,16 @@ hr {
 .danger {
   color: red;
 }
+a {
+  color: #aaa;
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+}
+#cacheFiles {
+  margin-bottom: 20px;
+}
+li {
+  line-height: 1.4em;
+}
