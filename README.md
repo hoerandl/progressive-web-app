@@ -7,7 +7,7 @@ Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "**prog
 ## Testfunktionen
 
 - Benachrichtigungen testen
-- Cache Funktionen eingebaut - _noch in Arbeit_
+- Cache Funktionen eingebaut
 
 ## Support
 
