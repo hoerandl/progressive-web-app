@@ -4,24 +4,10 @@ Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "**prog
 
 [DEMOSEITE](https://www.hoerandl.com/github/progressive-web-app/index.html)
 
-## Testfunktionen
+## eingebaute Testfunktionen
 
-- Benachrichtigungen testen
-- Cache Funktionen eingebaut
-
-## Support
-
-Derzeit werden PWAs nur von folgenden Browser (in der jeweils aktuellen Version) unterstützt:
-
-- Chrome
-- Edge
-- Opera
-- Chrome für Android
-- Samsung Internet
-- Opera Mobile
-- Android Browser
-
-siehe: [Can I use](https://caniuse.com/?search=beforeinstallprompt)
+- Benachrichtigungen
+- Cache-Speicher
 
 ## meine Tests
 

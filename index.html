@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Progressive Web App</title>
+    <meta
+      name="description"
+      content="einfache HTML Seite um Funktionen einer Progressive-Web-App zu testen"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="img/icons/apple-icon-180.png" />
@@ -205,19 +209,23 @@
   </head>
   <body>
     <div class="container">
-      <img
-        src="img/alien-svgrepo-com.svg"
-        alt="Alien Icon"
-        width="300"
-        height="300"
-      />
+      <img src="img/alien.svg" alt="Alien Icon" width="300" height="300" />
       <h1>Progressive <span class="green nowrap">Web App</span></h1>
-      <h2>Actionlog:</h2>
-      <div id="info" class="infopanel"></div>
-      <button id="buttonInstall" class="install" style="display: none">
-        PWA Installieren
-      </button>
-      <hr />
+
+      <h2>Installationsprüfung:</h2>
+      <div class="testarea">
+        <h3>Actionlog:</h3>
+        <div id="info" class="infopanel"></div>
+        <button id="buttonInstall" class="btn install" style="display: none">
+          PWA Installieren
+        </button>
+        <div id="noInstallable" class="danger invisible" style="display: block">
+          <strong>PWA kann nicht installiert werden!</strong><br />
+          Entweder unterstützt dieser Browser die Anforderungen nicht oder es
+          ist die WPA bereits installiert.
+        </div>
+      </div>
+
       <h2>Benachrichtigungen:</h2>
       <div id="testarea" class="testarea">
         <p>Status: <span id="noificationStatus"></span></p>
@@ -232,14 +240,12 @@
           Benachrichtigung erhalten
         </button>
       </div>
-      <hr />
+
       <h2>Cache:</h2>
       <div class="testarea">
-        <p>Dateien im Cache:</p>
+        <h3><span id="countFiles"></span> Dateien im Cache:</h3>
         <div id="cacheFiles"></div>
-        <button id="clearCache" class="btn" style="display: inline-block">
-          Cache leeren
-        </button>
+        <button id="clearCache" class="btn">Cache leeren</button>
         <button id="" onclick="window.location.reload()" class="btn">
           Seite neu laden
         </button>

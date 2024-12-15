@@ -1,18 +1,22 @@
 // Versionsnummer anzeigen
-console.log(version);
 document.querySelector("#version").innerHTML = version;
 
 // Informationen anzeigen
-var info = "Start...<br>";
+var info = "";
 document.querySelector("#info").innerHTML = info;
 
 // Install-Button anzeigen
 var buttonInstall = document.querySelector("#buttonInstall");
 function showInstallPromotion() {
   buttonInstall.style.display = "block";
+  noInstallable.style.display = "none";
 }
 function hideInstallPromotion() {
   buttonInstall.style.display = "none";
+}
+// App bereits installiert
+if (!window.matchMedia("(display-mode: browser)").matches) {
+  noInstallable.style.display = "none";
 }
 
 // ServiceWorker registrieren
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   } else {
     document.querySelector("#info").innerHTML +=
-      '"Service Worker" not available<br>';
+      '<span class="danger">"Service Worker" not available</span><br>';
   }
 });
 
@@ -40,7 +44,8 @@ window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault(); // verhindert die Anzeige der Mini-Infoleiste auf mobilen Geräten
   deferredPrompt = e;
   showInstallPromotion();
-  document.querySelector("#info").innerHTML += "PWA ready for installation<br>";
+  document.querySelector("#info").innerHTML +=
+    '<span class="success">PWA ready for installation</span><br>';
 });
 
 // der Button zum Installieren wurde gedrückt
@@ -145,7 +150,6 @@ async function cacheDeleteAll() {
   const keys = await caches.keys();
   for (const key of keys) {
     caches.delete(key);
-    console.log(key);
   }
 }
 
@@ -158,12 +162,22 @@ buttonClearCache.addEventListener("click", () => {
 });
 
 // alle Dateien im Cache holen
+function getUrlsFromProject(url) {
+  if (window.innerWidth <= 991) {
+    let file1 = window.location.href;
+    path = window.location.pathname;
+    let file2 = path.substring(path.lastIndexOf("/") + 1, path.length);
+    let file3 = file1.replace(file2, "");
+    return url.replace(file3, "");
+  } else {
+    return url;
+  }
+}
 const cacheFileArray = [];
 async function cacheFiles() {
   const keys = await caches.keys();
   for (const key of keys) {
-    console.log(key);
-
+    var countFiles = 0;
     caches.open(key).then((cache) => {
       cache
         .matchAll()
@@ -171,19 +185,23 @@ async function cacheFiles() {
           return response;
         })
         .then((files) => {
-          console.log(files);
+          countFiles = countFiles + files.length;
           document.querySelector("#cacheFiles").innerHTML +=
-            "<h3>" + key + "</h3><ul>";
+            "<h4>" + key + "</h4>";
           for (const file of files) {
-            console.log(file.url);
+            const nameOfFile = getUrlsFromProject(file.url);
             document.querySelector("#cacheFiles").innerHTML +=
-              '<li><a href="' + file.url + '">' + file.url + "</a></li>";
+              '<div class="line"> - <a href="' +
+              file.url +
+              '">' +
+              nameOfFile +
+              "</a></div>";
           }
-          document.querySelector("#cacheFiles").innerHTML += "</ul>";
+          document.getElementById("countFiles").innerHTML = countFiles;
         });
     });
   }
 }
-
-cacheFiles();
-console.log(cacheFileArray);
+document.addEventListener("DOMContentLoaded", () => {
+  cacheFiles();
+});
