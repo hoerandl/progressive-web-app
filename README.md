@@ -2,7 +2,7 @@
 
 Das ist eine kleine HTML Seite die man mit vielen Browsern als sogenante "**progressive Web App**" kurz **PWA** installieren kann.
 
-[DEMOSEITE](https://www.hoerandl.com/github/progressive-web-app/index.html)
+[DEMOSEITE](https://demos.hoerandl.com/progressive-web-app/)
 
 ## eingebaute Testfunktionen
 
